@@ -15,3 +15,6 @@ class ExpenseTracker:
 
     def save_expense(self, expense:dict)->None:
         self._file_persister.save_expense(expense)
+
+    def open_expense_file(self, filename:str)->None:
+        self._file_persister.open_expense_file(filename)

@@ -29,3 +29,7 @@ class CliUserInterface:
         expense["category"] = input("Enter expense category: ")
         expense["amount"] = float(input("Enter expense amount: "))
         self._expense_tracker.save_expense(expense)
+
+    def open_expense_file(self)->None:
+        filename = input("Enter expense filename: ")
+        self._expense_tracker.open_expense_file(filename)
