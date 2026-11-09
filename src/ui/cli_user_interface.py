@@ -33,3 +33,7 @@ class CliUserInterface:
     def open_expense_file(self)->None:
         filename = input("Enter expense filename: ")
         self._expense_tracker.open_expense_file(filename)
+
+
+    def print_expenses(self)->None:
+        self._expense_tracker.print_expenses()
