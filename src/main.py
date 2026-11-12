@@ -23,7 +23,9 @@ def main()->None:
 
         elif choice == "4":
             user_interface.print_expenses()
-
+        elif choice == "5":
+            user_interface.export_expenses()
+            
         elif choice == "6":
             print("Exiting Expense Tracker.")
             break

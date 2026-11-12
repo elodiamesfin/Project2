@@ -20,7 +20,7 @@ class CliUserInterface:
         print("6. Exit")
         print("7. Filter Expenses by Category")
         print("8. Filter Expenses by Date Range")
-        
+
     def create_expense_file(self)->None:
         filename = input("Enter expense filename: ")
         self._expense_tracker.create_expense_file(filename)
@@ -48,3 +48,7 @@ class CliUserInterface:
         start_date = input("Enter start date (YYYY-MM-DD): ")
         end_date = input("Enter end date (YYYY-MM-DD): ")
         self._expense_tracker.filter_by_date_range(start_date, end_date)
+
+    def export_expenses(self)->None:
+        filename = input("Enter CSV filename: ")
+        self._expense_tracker.export_expenses(filename)

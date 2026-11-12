@@ -2,6 +2,7 @@
 """Contains definition for FilePersister class."""
 
 import json
+import csv
 
 
 class FilePersister:
@@ -50,3 +51,24 @@ class FilePersister:
                 if "date" in expense:
                     if start_date <= expense["date"] <= end_date:
                         print(expense)
+
+    def export_expenses(self, filename:str)->None:
+        expenses = []
+        with open(self._active_expense_file, "r") as f:
+            for line in f:
+                expense = json.loads(line)
+                if "date" in expense:
+                    expenses.append(expense)
+
+        with open(filename, "w", newline="") as f:
+            writer = csv.writer(f)
+            writer.writerow(["Date", "Category", "Amount"])
+
+            for expense in expenses:
+                writer.writerow([
+                    expense["date"],
+                    expense["category"],
+                    expense["amount"]
+                ])
+
+        print(f"Expenses exported to {filename}")

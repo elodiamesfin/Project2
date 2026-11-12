@@ -27,3 +27,6 @@ class ExpenseTracker:
 
     def filter_by_date_range(self, start_date:str, end_date:str)->None:
         self._file_persister.filter_by_date_range(start_date, end_date)
+   
+    def export_expenses(self, filename:str)->None:
+        self._file_persister.export_expenses(filename)
