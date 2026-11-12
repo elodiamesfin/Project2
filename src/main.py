@@ -25,7 +25,7 @@ def main()->None:
             user_interface.print_expenses()
         elif choice == "5":
             user_interface.export_expenses()
-            
+
         elif choice == "6":
             print("Exiting Expense Tracker.")
             break
@@ -36,5 +36,8 @@ def main()->None:
         elif choice == "8":
             user_interface.filter_by_date_range()
 
+        elif choice == "9":
+            user_interface.filter_by_date_and_category()
+            
 if __name__ == "__main__":
     main()

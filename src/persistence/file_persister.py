@@ -72,3 +72,12 @@ class FilePersister:
                 ])
 
         print(f"Expenses exported to {filename}")
+   
+    def filter_by_date_and_category(self, start_date:str, end_date:str, category:str)->None:
+        with open(self._active_expense_file, "r") as f:
+            for line in f:
+                expense = json.loads(line)
+                if "date" in expense and "category" in expense:
+                    if start_date <= expense["date"] <= end_date:
+                        if expense["category"] == category:
+                            print(expense)
