@@ -1,0 +1,7 @@
+# Python temporary files
+__pycache__/
+*.pyc
+
+# Expense Tracker test files
+expenses.json
+expenses.csv
