@@ -28,5 +28,8 @@ def main()->None:
             print("Exiting Expense Tracker.")
             break
 
+        elif choice == "7":
+            user_interface.filter_by_category()
+
 if __name__ == "__main__":
     main()

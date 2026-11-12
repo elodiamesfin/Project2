@@ -21,3 +21,6 @@ class ExpenseTracker:
 
     def print_expenses(self)->None:
         self._file_persister.print_expenses()
+
+    def filter_by_category(self, category:str)->None:
+        self._file_persister.filter_by_category(category)

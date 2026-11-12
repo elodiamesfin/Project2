@@ -35,3 +35,10 @@ class FilePersister:
                 if "date" in expense:
                     print(expense)
 
+    def filter_by_category(self, category:str)->None:
+        with open(self._active_expense_file, "r") as f:
+            for line in f:
+                expense = json.loads(line)
+                if "category" in expense:
+                    if expense["category"] == category:
+                        print(expense)

@@ -18,7 +18,8 @@ class CliUserInterface:
         print("4. Print Expenses")
         print("5. Export Expenses")
         print("6. Exit")
-
+        print("7. Filter Expenses by Category")
+    
     def create_expense_file(self)->None:
         filename = input("Enter expense filename: ")
         self._expense_tracker.create_expense_file(filename)
@@ -37,3 +38,7 @@ class CliUserInterface:
 
     def print_expenses(self)->None:
         self._expense_tracker.print_expenses()
+
+    def filter_by_category(self)->None:
+        category = input("Enter expense category to filter: ")
+        self._expense_tracker.filter_by_category(category)
