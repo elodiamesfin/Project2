@@ -31,5 +31,8 @@ def main()->None:
         elif choice == "7":
             user_interface.filter_by_category()
 
+        elif choice == "8":
+            user_interface.filter_by_date_range()
+
 if __name__ == "__main__":
     main()

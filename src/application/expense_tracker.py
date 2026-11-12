@@ -24,3 +24,6 @@ class ExpenseTracker:
 
     def filter_by_category(self, category:str)->None:
         self._file_persister.filter_by_category(category)
+
+    def filter_by_date_range(self, start_date:str, end_date:str)->None:
+        self._file_persister.filter_by_date_range(start_date, end_date)

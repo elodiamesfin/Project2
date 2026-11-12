@@ -42,3 +42,11 @@ class FilePersister:
                 if "category" in expense:
                     if expense["category"] == category:
                         print(expense)
+
+    def filter_by_date_range(self, start_date:str, end_date:str)->None:
+        with open(self._active_expense_file, "r") as f:
+            for line in f:
+                expense = json.loads(line)
+                if "date" in expense:
+                    if start_date <= expense["date"] <= end_date:
+                        print(expense)
